@@ -1,0 +1,518 @@
+html {                              /* los enlaces href, imagenes img tiene un display in line no se les puede aplicar un ancho, los div h1... p son display block si se les puede dar ancho y margen*/
+    box-sizing: border-box;         /* Sniped para que al poner un ancho cualquiera el padin no aumente el tamaño y quede el valo que se dio en el ancho */
+    font-size: 62.5%;               /* Reset para REMS - Configuracion del tamaño de fuente raíz en el CSS 1rem es igual a 10px */
+}
+
+*, *:before, *:after {              /* Sniped para que al poner un ancho cualquiera el padin no aumente el tamaño y quede el valo que se dio en el ancho */
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    /*  Elimina el margen del body que causa el borde blanco al rededor de la pagina*/
+    font-family: "Lato", sans-serif;
+    /*  Fuente a usar en la pagina */
+    font-size: 1.6rem;
+    line-height: 2;
+    /*  Interlineado en el texto */
+}
+
+html {
+    box-sizing: border-box;
+    /* Esto hace que, El ancho que yo diga es el ancho final absoluto esto por que el navegador "suma" el tamaño de los elementos. ejp: $300px (ancho) + 20px (izq) + 20px (der) + 5px (borde izq)} + 5px (borde der) = 350px de ancho total. esto hace que las imagenes hagan un salto linea al no caber en la pagina*/
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    /* Usas inherit para que todos tus div, header, section y nav sigan la misma regla de box-sizing: border-box; cada elemento de la página hereda su funcionamiento*/
+}
+
+img {
+    max-width: 100%;                /* Evita que la imagen se desborde. La hace flexible. */
+    height: auto;                   /* Mantiene la proporción de la imagen para que no se vea aplastada. */
+    display: block;                 /* El elemento ocupa todo el ancho disponible y fuerza un salto de línea antes y después del elemento, se organiza uno abajo de otro se puede ajustar libremente el width, height, padding y margin */
+    /* las imágenes son elementos "inline", lo que a veces deja un pequeño espacio vacío debajo de ellas. Al ponerlas como "block", eliminas ese comportamiento. */
+    object-fit: cover;              /* Evita que la imagen se estire feo y Asegura que se vea bien aunque se recorte */
+    content-visibility: auto;       /* Carga optimizada, el navegador salta la renderización de los elementos que están fuera de la pantalla, lo hace solo hasta que el usuario esté a punto de verlo*/
+}
+    
+
+/* Globales, se utiliza multiples veces */
+
+img {
+    /* Afecta todas laa imagenes de la pagina  */
+    max-width: 100%;
+    /* Imagenes responsive, permite que lasimagenes que son demasiado grandes se ajusten al contenedor  */
+}
+
+.contenedor {
+    width: clamp(300px, 95vw, 120rem);          /* clamp(mínimo, actual_variable, máximo) */
+    margin-inline: auto;                        /* el texto fluye de izquierda a derecha, auto: centrar un elemento horizontalmente dentro de su contenedor */
+    padding-inline: 1rem;                       /* El padding si el usuario usa una pantalla extremadamente pequeña */
+    box-sizing: border-box;                     /* Fundamental para que el padding no sume tamaño extra */
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 3.4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2.6rem;
+}
+
+summary {
+    font-size: 2rem;
+    font-weight: 600; 
+}
+
+/** UTILIDADES **/
+.seccion {
+    margin-top: 2rem;               /* Espacio de separación entre el header y el body */
+    margin-bottom: 2rem;            /* Espacio de separación al final de la pagina */
+}
+
+.fw-300 {
+    font-weight: 300;               /* Tamaño del grosor de la letra debe ser cualquiera de los que se exportaron de googleapis wght@300;400;700;900&display=swap  */
+}
+
+.centrar-texto {
+    text-align: center;             /* Centra el titulo del h2 de la clase .centrar-text */
+}
+
+.d-block {
+    display: block!important;       /* !important: Hace que se tenga en cuenta display: block en vez de  display: inline-block para que el boton ocupe la totalidad de espacio disponible*/
+}
+
+.contenido-centrado {
+    max-width: 80rem;                /* Distribuye en 800 pixeles el contenido dentro de la clase contenido-centrado */;
+}
+
+/* BOTONES */
+.boton {
+    /* Configuraciones de las letras de los botones */
+    color: #ffffff;
+    font-weight: 700;                    /* Tamaño del grosor del nombre del botón*/
+    text-decoration: none;               /* Quita interlineado en el nombre del botón */
+    font-size: 1.8rem;                   /* Tamaño de la letra del botón */
+    padding: 1rem 3rem;                  /* Espacio hacia adentro del contenido */
+    margin-top: 3rem;                    /* Separacion entre el botón y el contenedor */
+    display: inline-block;               /* Es un híbrido entre un elemento de texto (inline) y uno de bloque, los elementos se colocan uno al lado del otro (en la misma línea) mientras quepan, permite definirle (width y height), No ocupan todo el ancho (solo lo que ocupa su contenido) */
+    text-align: center;                  /* Centra el nombre del botón */
+    text-transform: uppercase;
+    border: none;                        /* Quita el borde a los botones */
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.boton-amarillo {
+    background-color: #E08709;
+}
+
+.boton-verde {
+    background-color: #71B100;
+}
+
+.boton-ver {
+    display: inline-flex;                            /* Alinea icono y texto, Permite que el contenedor Flex se alinee en la misma fila con otros elementos (como texto u otros inline-blocks). No ocupa todo el ancho (solo lo que ocupa su contenido)*/
+    align-items: center;                             /* Alinea icono verticalmente */
+    padding: 7px 20px;                               /* Tamaño del botón */
+    margin: 8px;
+    border-radius: 50px;                             /* Bordes más redondeados tipo "píldora" */
+    color: white;
+    text-decoration: none;                           
+    transition: all 0.3s ease;                       /* La transición mágica para suavizar cambios */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);     /* le da profundidad al botón efecto sombra o flotando */
+    min-width: 180px;                                /* Tamaño del botón horizontalmente  */
+    justify-content: center;
+}
+
+.boton-ver i {
+     margin-right: 10px;                            /* Espacio entre el icono y el texto */
+     font-size: 1.1rem;                              /* Tamaño del icono del botón ver propiedad */        
+}
+
+.boton-ver:hover {
+    transform: translateY(-5px);                    /*  Efecto visual cuando pasas el mouse */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);    /* El botón sube un poquito */
+    filter: brightness(1.3);                        /* El color se aclara ligeramente */
+}
+
+.boton-ver:active {
+    transform: translateY(0);                       /* Al hacer clic baja de nuevo */
+}
+
+.boton-trabaja-nosotros {
+    display: flex;                  /* Crea un contenedor flexible; alinea los hijos automáticamente y es ideal para estructuras de 1 dimensión, coloca a todos los elementos hijos en una fila horizontal, ocupa todo el ancho  */
+    justify-content: center;
+}
+
+@media (max-width: 480px) {
+    contacto-btn {
+        width: 100%;                                /* Ajuste en celulares, los botones ocupan todo el ancho */
+
+    }
+}
+
+/* HEADER */
+.site-header{                                       /* Color y tamaño del encabezado de nosotros.html */
+    background-color: #333333;                      
+    padding: 1rem 0 3rem 0;
+}
+
+
+.site-header.inicio {
+    background-image: url(../img/header.jpg);
+    background-position: center center;
+    /* Muestra la imagen desde el centro */
+    background-size: cover;
+    /* toma todo el espacio en alto y ancho de la imagen guardando proporciones */
+    height: 100vh;
+    /* Maximo va medir el 100 % de la pantalla */
+    min-height: 60rem;
+    /* Minimo mostrara 600 pixeles de la imagen */
+}
+
+.contenido-header {
+    height: 100%;
+    /* Toma todo el espacio disponible de la clase padre en el header principal .site-header.inicio */
+    display: flex;
+    /* Habilita flexbox el cual permite organizar, alinear y distribuir el espacio entre elementos dentro de un contenedor pero solo para el primer nivel de hijos en el .htnl*/
+    flex-direction: column;
+    /* Posiciona el contenido de la barra y h1 de abajo hacia arriba */
+    justify-content: space-between;
+    /* Posiciona le barra y el h1 con un espacio entre ellos*/
+}
+
+.contenido-header h1 {
+    color: #ffffff;
+    padding-bottom: 2 rem;
+    /* Espacio hacia adentro entre dos lineas */
+    max-width: 60rem;
+    /* Cuando llega 600 px corta el elemento y hace un salto de linea */
+    line-height: 2;
+    /* Interlineado espacio entre las dos lineas del h1  */
+}
+
+.barra {
+    display: flex;          /* Habilita flexbox el cual permite organizar, alinear y distribuir el espacio entre elementos dentro de un contenedor*/
+    justify-content: space-between;         /* Alinea un elemento a la derecha y otro a la izquierda, existen otras propiedades como flex-start, flex-end, center, space-around/evenly*/
+    align-items: center;
+    /* Alinea verticalmente el contenedor de navegación en la mitad del logo*/
+    padding-top: 3rem;
+    /* Espacio hacia adentro de la parte alta de la pagina y el logo */
+}
+
+/** NAVEGACION **/
+.navegacion a {                     /* a hace referencia a la eqtiqueta <a> que esta dentro de la etiqueta <nav> en el documento html */
+    color: #ffffff;               /* Se puede usar formato rgba y hsla  para darle un toque de transparencia a los colores */
+    text-decoration: none;          /* borrar linea debajo de los enlaces de navegación */
+    font-size: 1.8rem;              /* = 18 px*/ 
+    margin-right: 2rem;             /* espacios entre los enlaces de navegación  */    
+}
+
+.navegacion a:hover {
+    color: #00aeffaf;
+}
+
+.navegacion a:last-of-type {
+    /* Al ultimo que tengo le quita el margen a la derecha */
+    margin: 0;
+}
+
+/* ICONOS NOSOTROS */
+.iconos-nosotros {
+    display: flex;                          /* Ubica los tres h3 de la clase .iconos-nosotros en el centro */
+    justify-content: space-between;         /* Agrega un espacio igual entre cada elemento del contenedor */
+    flex-wrap: wrap;                        /* Permite que los iconos bajen si no hay espacio y no se rompa en dispositivos móviles. */
+    gap: 2rem;                              /* Crea espacio entre los elementos de forma moderna */
+}
+
+.icono {
+    flex: 1 1 300px;                    /* Cada elemento medira lo mismo 33.3% de toda la pantalla, en móviles sera el 100% y en PC el 33% */
+    text-align: center;                 /* Alinea el texto al centro*/
+}
+
+.icono img {
+    display: block;                     /* Las imágenes por defecto fluyen como texto; al hacerlas bloque, toman su propio espacio. */
+    margin: 0 auto 1.5rem auto;         /* Calcula el espacio sobrante a la izquierda y derecha y lo reparte igual para quedar centrado */
+}
+
+.icono h3 {
+    text-transform: uppercase;          /* Cambia la letra a mayusulas o minusculas ejp Capitalize, lowercase*/
+}
+
+/* ANUNCIOS */
+.contenedor-anuncios {
+    display: flex;                      /* Ubica la sección de Casas y Apartamentos en venta en el centro */
+    justify-content: space-between;     /* Agrega un espacio igual entre cada elemento del contenedor */    
+    flex-wrap: wrap;                    /* Hace que el contenido se pocicione debajo del otro */
+}
+
+.anuncio {
+    flex: 0 0 calc(33.3% - 1rem);           /* flex-grow=0 el contenido crece lo mas posible, flex-shrink=0 el contenido se hace pequeño si es posible, Cada elemento medira lo mismo 33.3% de toda la pantalla, en móviles sera el 100% y en PC el 33% */
+    border: 1px solid #B5B5B5;            /* Borde para cada anuncio width, style, color */
+    background-color: #F5F5F5;
+    margin-bottom: 2rem;                    /* Espacio vertidal entre los contenido de los anuncios */
+}
+
+.contenido-anuncio {
+    padding: 2rem;                          /* le da un espacio en cada contenedor en estas direciones top, left right, bottom */
+}
+
+.contenido-anuncio h3,
+.contenido-anuncio p {
+    margin: 0;                  /* Quita espacios que se crean para los h3 y p */
+    
+}
+
+.precio {
+    color: #71B100;
+    font-weight: 800;               /* Tamaño del grosor del precio (por defecto los parrafos tienen 400 y los h1 700)*/
+}
+
+.iconos-caracteristicas {
+    list-style: none;                       /* Quita la viñeta que se agrega en el icono al crear la lista*/
+    padding: 0;                             /* Elimina el margen que se agrega en el unordered list <ul> */
+    display: flex;                          /* Coloca un elemento junto al otro (Padre <ul> Hijo <li>) */
+    justify-content: space-evenly;          /* Centra los iconos */
+    flex: 1;                                /* Descomprime los iconos */
+    max-width: 50rem;                       /* Permite que los iconos no se expandan maximo 500px */
+}
+
+.iconos-caracteristicas li {
+    display: flex;                          /* Icono y texto se ponen uno frente al otro */
+}
+
+.iconos-caracteristicas li img {
+    margin-right: 1rem;                     /* Espacio entre el icono y el numero */
+}          
+
+.iconos-caracteristicas-anuncios {
+    list-style: none;                       /* Quita la viñeta que se agrega en el icono al crear la lista*/
+    padding: 0;                             /* Elimina el margen que se agrega en el unordered list <ul> */
+    display: flex;                          /* Coloca un elemento junto al otro (Padre <ul> Hijo <li>) */
+    justify-content: space-evenly;          /* Centra los iconos */
+    flex: 1;                                /* Descomprime los iconos */
+    width: 4.3rem;                          
+    height: 4.3rem;                         
+    max-width: 50rem;                       /* Permite que los iconos no se expandan maximo 500px */
+}
+
+.iconos-caracteristicas-anuncios li {
+    display: flex;                                  /* Icono y texto se ponen uno frente al otro */
+}
+
+.iconos-caracteristicas-anuncios li img {
+    margin-right: 1rem;                             /* Espacio entre el icono y el numero */
+}
+
+.ver-todas {
+    display: flex;                  /* Crea un contenedor flexible; alinea los hijos automáticamente y es ideal para estructuras de 1 dimensión, coloca a todos los elementos hijos en una fila horizontal, ocupa todo el ancho  */
+    justify-content: flex-end;      /* Alinea a la derecha el botón  */
+}
+
+/** CONTACTO HOME **/
+.imagen-contacto {
+    background-image: url(../img/encuentra.jpg);
+    background-position: center center;                 /* Centra la imagen */
+    background-size: cover;                             /* quita zoom de la imagen */
+    height: 40rem;                                      /* tamaño verticalde la imagen */
+    display: flex;
+    align-items: center;                                /* Alinea verticalmente */
+}
+
+.contenido-contacto {
+    color: #ffffff;
+}
+
+.contenido-contacto p {
+    font-size: 1.8rem;
+}
+
+/* SECCION INFERIOR */
+.seccion-inferior {
+    display: flex;
+    justify-content: space-between;   
+}
+
+.seccion-inferior .blog {
+    flex-basis: 60%;                         /* Se asigna el 60 % de la pantalla al blog  */
+}
+
+.seccion-inferior .testimoniales {
+    flex-basis: calc(40% - 2rem);           /* Se asigna el 40 % de la pantalla al testimonio  */
+}
+
+.entrada-blog {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;                /* Espacio entre los dos articulos  */
+}
+
+.entrada-blog:last-of-type {
+    margin-bottom: 0;                   /* Quita espacio naranja al inspecionar para el articulo 2 */
+}
+
+.entrada-blog .imagen {
+    flex-basis: 40%;                    /* Tamaño imagen del articulo  */
+}
+
+.entrada-blog .texto-entrada {
+    flex-basis: calc(60% - 3rem);       /* Tamaño del  <h4> y el <p>  */
+}
+
+.texto-entrada a {
+    color: #000000;
+    text-decoration: none;              /* Quita el interlineado del href */
+}
+
+.texto-entrada h4 {
+    margin: 0;                          /* Quita el salto de linea entre la imagen y el <h4> */
+    line-height: 1.4;                   /* Interlineado del <h4> y el <p> */    
+}
+
+.texto-entrada h4::after {
+    content: '';                        /* Agrega un seudoelemento debajo de <h4> */   
+    display: block;                     /* Permite agregar el width y margin-top */
+    width: 15rem;                       /* tamaño de longitud de la linea */
+    height: .5rem;                      /* tamaño de ancho de la linea */
+    background-color: #71B100;          
+    margin-top: 1rem;                   /* Espacio entre el <h4> y la linea */
+}
+
+.texto-entrada span {
+    color: #E08709;                   /* Cambia de color a las etiqueta <span> */
+}
+
+/* Testimonios */
+.testimonial {
+    background-color: #71B100;
+    font-size: 2.4rem;                  /* tamaño de la letra */
+    padding: 2rem;                      /* espacio en los bordes */
+    color: #ffffff;                   /* color de la letra en el blockquote> y el <p> */
+    border-radius: 6rem;                /* redondear las esquinas del cuadro */
+}
+
+.testimonial p {
+    text-align: right;                  
+}
+
+.testimonial blockquote::before {
+    content: '';                                    /* vacio sin texto */
+    background-image: url(../img/comilla.svg);
+    width: 4rem;                                    
+    height: 4rem;
+    position: absolute;                             /* posiciona las comillas */
+    left: -2rem;
+}
+
+.testimonial blockquote {
+    position: relative;                             /* posiciona las comillas */
+    padding-left: 5rem;                             /* ubica el <blockquote> a 5o pixeles de la izquierda de las comillas*/
+    font-weight: 300;                               /* grosor de la letra del  <blockquote>*/                                   
+}
+
+/* PREGUNTAS FRECUENTES */
+.seccion-faqs {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* FOOTER */
+.site-footer {
+    background-color: #333333;
+    margin: 0;
+}
+
+.contenedor-footer{
+    padding: 2rem 0;                                /* Agrega 2 pixeles de espacio en el footer */
+    display: flex;
+    justify-content: space-between;                 /* separa la navegación a la izquierda y el copyright a la derecha*/
+}
+
+.copyright {
+    margin: 0;                                      /* Quita la margen al final del  copyright*/
+    color: #ffffff;
+}
+
+/* PAGINA INTERNA */
+.contenido-nosotros {
+    display: grid;                                  /* permite crear estructuras de dos dimensiones filas y columnas */
+    grid-template-columns: repeat(2, 1fr);          /* Divide la pantalla en dos fraciones iguales para la iamgen y los parrafos */
+    grid-column-gap: 2rem;                          /* Espacion entre la imagen y los parrafos*/
+}
+
+.contenido-nosotros blockquote {
+    font-weight: 900;                               /* Grosor del blockquote */
+    font-size: 2rem;                                /* tamaño de la letra */        
+    margin: 0;                                      /* Quita la margen que se genera despues de la imagen blockguote */         
+    padding: 1rem 0 3rem 0;                       /* Espacio vertical antes y despues del blockguote */          
+}
+
+/* ANUNCIO */
+.resumen-propiedad{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* CONTACTO  */
+
+.contacto {
+    font-size: 1.3;
+    color: #4f4f4f;
+    margin: 2rem 0 0 0;                                     /* agrupa los elementos con su respectivo label 2 rem arriba y 0 abajo, derecha, izquierda*/
+}
+
+legend {
+    font-size: 2rem;
+    color: #4f4f4f;
+}
+
+label {
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;                                          /* El input toma todo el espacio disponible */
+}
+
+input:not([type="submit"]), textarea, select {              /* Se aplica a todos los input a exepcion del submit */
+    padding: 1rem;                                          /* Tamaño del ancho del input */
+    display: block;                                         /* Toma todo el espacio disponible */
+    width: 100%;                                            /* Longitud del input todo le espacio disponible en el legend */
+    background-color: #e1e1e1;
+    margin-bottom: 2rem;                                    /* Espacio entre el input y el proximo label */
+    border: none;                                           /* elimina el borde del input */
+    border-radius: 1rem;                                    /* Redondea el input en las equinas */
+}
+
+input [type="radio"] {                  
+    width: auto;                                            /* El input toma solo el espacio que sea requerido */
+    margin: 0;                                              /*  */
+}
+
+select {
+    -webkit-appearance: none;                               /* Le da un poco de paddin al select*/
+    appearance: none;
+}
+
+textarea {
+    height: 20rem;                                          /* Tamaño de 200 pixeles para el textarea */
+}
+
+.forma-contacto {
+    max-width: 50rem;                                       /* espacio entre el label y el radiobuton */
+    display: flex;                                          /* ubica los input horizontalmente */
+    justify-content: space-between;
+}

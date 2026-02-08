@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><!--Todo lo que comunica con el navegador-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Libreria para iconos de la pagina https://fontawesome.com/ -->
+
+    <!--ETIQUETAS SEO (Search Engine Optimization)-->
+    <meta name="description" content="Pagina dedidaca a rentar y vender propiedades lujosas">
+    <!--Descripcion que se puede visualizar en el resultado del buscardor de google-->
+
+    <!--SEO OPEN GRAPH https://www.opengraph.xyz/ // CONJUNTO DE ETIQUETAS PARA CUANDO SE COMPARTA EL CONTENIDO SE VEA BIEN EN REDES SOCIALES-->
+    <meta property="og:title" content="Pagina de bienes raices">
+    <meta property="og:description" content="Pagina dedidaca a rentar y vender propiedades lujosas">
+    <meta property="og:type" contenido="sitio web">
+    <meta property="og:image" content="/images/header.jpg">
+    <meta property="og:image:alt" content="Fotografia principal de la pagina de bienes raices ">
+
+    <!--Metadatos-->
+    <meta name="robots" content="index, follow">
+    <!-- Se le indica al navegador si debe indexar la pagina y si debe seguir los enlaces-->
+    <meta name="theme-color" content="#09f"> <!--Coloca color a la pagina en el navegador safari  -->
+    <link rel="icon" type="image/jgp" href="/img/iconopestaña.jpg"> <!-- icono en la pestaña de la pagina-->
+
+    <!-- Libreria para fonts https://fonts.google.com/-->
+    <meta charset="UTF-8"> <!--Codificación utilizada -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Hace el sitio responsive-->
+    <title>Bienes Raices</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--preconnect: establece la conexión de una vez con el servido de fonts.googleapis.com-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--crossorigin: descargar la fuente despues de hacer conexion con el servidor-->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Para ver todos los elementos de la pagina iguales e cualquier navegador o dispositivo ya q cada navegador aplica sus propios estilos a los elementos HTML-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Siempre se coloca de ultima la libreria de los estilos para que apliquen los estilos propios  -->
+</head>
+
+<body><!--Todo lo visible en la pagina-->
+    <header class="site-header">
+        <div class="contenedor contenido-header">
+            <!-- class="contenedor: Centra el contenido de la pagina, contenido-header solo afecta la barra y el h1-->
+            <div class="barra"> <!--clase para la información de la parte superior-->
+                <!-- agrupar contenido introductorio o de navegación, como un logo, título principal o menú tambien se usa en secciones específicas como un <article> o <section> -->
+                <a href="/">
+                    <img src="img/logo.svg" alt="Logotipo de bienes raices">
+                </a>
+
+                <nav class="navegacion"> <!--nav: Contenedor de enlaces de navegación-->
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="anuncios.html">Anuncios</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contacto.html">Contactos</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="seccion contenedor"> <!-- main: Contenido diferencial y unico de cada pagina, no se repite-->
+        <h2 class="fw-300 centrar-texto">Casas y Apartamentos en venta</h2>
+
+        <div class="contenedor-anuncios">
+            <div class="anuncio">
+                <img src="img/anuncio1.jpg" alt="Anuncio casa de lujo en el lago">
+                <div class="contenido-anuncio">
+                    <h3>Casa de Lujo en el Lago</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dolore vel illo mollitia fugiat
+                        omnis icta ccusamus, labore quae nulla. Dolorum, culpa! Porro.
+                    </p>
+                    <p class="precio">$3.000.000</p>
+
+                    <ul class="iconos-caracteristicas">
+                        <li>
+                            <img src="img/icono_wc.svg" alt="icono wc">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_estacionamiento.svg" alt="icono parqueadero">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_dormitorio.svg" alt="icono habitaciones">
+                            <p>4</p>
+                        </li>
+                    </ul>
+
+                    <a href="anuncio.html" class="boton boton-amarillo boton-ver d-block"> <i class="fa-regular fa-eye"></i>Ver Propiedad</a>
+                </div>
+            </div>
+
+            <div class="anuncio">
+                <img src="img/anuncio2.jpg" alt="Anuncio Casa Terminados de Lujo">
+                <div class="contenido-anuncio">
+                    <h3>Casa Terminados de Lujo</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dolore vel illo mollitia fugiat
+                        omnis dicta ccusamus, labore quae nulla. Dolorum, culpa! Porro.
+                    </p>
+                    <p class="precio">$2.000.000</p>
+
+                    <ul class="iconos-caracteristicas">
+                        <li>
+                            <img src="img/icono_wc.svg" alt="icono wc">
+                            <p>2</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_estacionamiento.svg" alt="icono parqueadero">
+                            <p>2</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_dormitorio.svg" alt="icono habitaciones">
+                            <p>3</p>
+                        </li>
+                    </ul>
+
+                    <a href="anuncio.html" class="boton boton-amarillo boton-ver d-block"> <i class="fa-regular fa-eye"></i>Ver Propiedad</a>
+                </div>
+            </div>
+
+            <div class="anuncio">
+                <img src="img/anuncio3.jpg" alt="Anuncio casa con Piscina">
+                <div class="contenido-anuncio">
+                    <h3>Casa con Piscina</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dolore vel illo mollitia fugiat
+                        omnis dicta ccusamus, labore quae nulla. Dolorum, culpa! Porro.
+                    </p>
+                    <p class="precio">$3.000.000</p>
+
+                    <ul class="iconos-caracteristicas">
+                        <li>
+                            <img src="img/icono_wc.svg" alt="icono wc">
+                            <p>2</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_estacionamiento.svg" alt="icono parqueadero">
+                            <p>2</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_dormitorio.svg" alt="icono habitaciones">
+                            <p>4</p>
+                        </li>
+                    </ul>
+
+                    <a href="anuncio.html" class="boton boton-amarillo boton-ver d-block"><i class="fa-regular fa-eye"></i>Ver
+                        Propiedad</a>
+                </div>
+            </div>
+            <div class="anuncio">
+                <img src="img/anuncio4.jpg" alt="Anuncio casa de lujo">
+                <div class="contenido-anuncio">
+                    <h3>Casa Fuera de la ciudad</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dolore vel illo mollitia fugiat
+                        omnis icta ccusamus, labore quae nulla. Dolorum, culpa! Porro.
+                    </p>
+                    <p class="precio">$5.000.000</p> 
+
+                    <ul class="iconos-caracteristicas">
+                        <li>
+                            <img src="img/icono_wc.svg" alt="icono wc">
+                            <p>2</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_estacionamiento.svg" alt="icono parqueadero">
+                            <p>2</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_dormitorio.svg" alt="icono habitaciones">
+                            <p>5</p>
+                        </li>
+                    </ul>
+
+                    <a href="anuncio.html" class="boton boton-amarillo boton-ver d-block"> <i class="fa-regular fa-eye"></i>Ver
+                        Propiedad</a>
+
+                </div>
+            </div>
+
+            <div class="anuncio">
+                <img src="img/anuncio5.jpg" alt="Anuncio Casa Frente al bosque">
+                <div class="contenido-anuncio">
+                    <h3>Casa Frente al bosque</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dolore vel illo mollitia fugiat
+                        omnis dicta ccusamus, labore quae nulla. Dolorum, culpa! Porro.
+                    </p>
+                    <p class="precio">$3.000.000</p>
+
+                    <ul class="iconos-caracteristicas">
+                        <li>
+                            <img src="img/icono_wc.svg" alt="icono wc">
+                            <p>2</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_estacionamiento.svg" alt="icono parqueadero">
+                            <p>1</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_dormitorio.svg" alt="icono habitaciones">
+                            <p>6</p>
+                        </li>
+                    </ul>
+
+                    <a href="anuncio.html" class="boton boton-amarillo boton-ver d-block"> <i class="fa-regular fa-eye"></i>Ver
+                        Propiedad</a>
+                </div>
+            </div>
+
+            <div class="anuncio">
+                <img src="img/anuncio6.jpg" alt="Anuncio casa con Piscina en la montaña">
+                <div class="contenido-anuncio">
+                    <h3>Casa en la Montaña</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dolore vel illo mollitia fugiat
+                        omnis dicta ccusamus, labore quae nulla. Dolorum, culpa! Porro.
+                    </p>
+                    <p class="precio">$5.000.000</p>
+
+                    <ul class="iconos-caracteristicas">
+                        <li>
+                            <img src="img/icono_wc.svg" alt="icono wc">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_estacionamiento.svg" alt="icono parqueadero">
+                            <p>4</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_dormitorio.svg" alt="icono habitaciones">
+                            <p>8</p>
+                        </li>
+                    </ul>
+
+                    <a href="anuncio.html" class="boton boton-amarillo boton-ver d-block"><i class="fa-regular fa-eye"></i>Ver
+                        Propiedad</a>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer class="site-footer seccion">
+        <!-- <footer> Puede ser usado tambien en la parte final de un articule No solo se usa al final de una pagina-->
+        <div class="contenedor contenedor-footer">
+            <nav class="navegacion">
+                <a href="nosotros.html">Nosotros</a>
+                <a href="anuncios.html">Anuncios</a>
+                <a href="blog.html">Blog</a>
+                <a href="contacto.html">Contactos</a>
+            </nav>
+            <small>
+                <p class="copyright">Protegido por Copyright © 2026</p>
+            </small>
+            <!--texto secundario o de menor importancia, como avisos legales, derechos de autor o letras pequeñas-->
+        </div>
+    </footer>
+
+
+
+</body>
+
+
+
+</html>

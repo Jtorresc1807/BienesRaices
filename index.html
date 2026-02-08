@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><!--Todo lo que comunica con el navegador-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Libreria para iconos de la pagina https://fontawesome.com/ -->
+
+    <!--ETIQUETAS SEO (Search Engine Optimization)-->
+    <meta name="description" content="Pagina dedidaca a rentar y vender propiedades lujosas">
+    <!--Descripcion que se puede visualizar en el resultado del buscardor de google-->
+
+    <!--SEO OPEN GRAPH https://www.opengraph.xyz/ // CONJUNTO DE ETIQUETAS PARA CUANDO SE COMPARTA EL CONTENIDO SE VEA BIEN EN REDES SOCIALES-->
+    <meta property="og:title" content="Pagina de bienes raices">
+    <meta property="og:description" content="Pagina dedidaca a rentar y vender propiedades lujosas">
+    <meta property="og:type" contenido="sitio web">
+    <meta property="og:image" content="/images/header.jpg">
+    <meta property="og:image:alt" content="Fotografia principal de la pagina de bienes raices ">
+
+    <!--Metadatos-->
+    <meta name="robots" content="index, follow">
+    <!-- Se le indica al navegador si debe indexar la pagina y si debe seguir los enlaces-->
+    <meta name="theme-color" content="#09f"> <!--Coloca color a la pagina en el navegador safari  -->
+    <link rel="icon" type="image/jgp" href="/img/iconopestaña.jpg"> <!-- icono en la pestaña de la pagina-->
+
+    <!-- Libreria para fonts https://fonts.google.com/-->
+    <meta charset="UTF-8"> <!--Codificación utilizada -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Hace el sitio responsive-->
+    <title>Bienes Raices</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--preconnect: establece la conexión de una vez con el servido de fonts.googleapis.com-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--crossorigin: descargar la fuente despues de hacer conexion con el servidor-->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Para ver todos los elementos de la pagina iguales e cualquier navegador o dispositivo ya q cada navegador aplica sus propios estilos a los elementos HTML-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Siempre se coloca de ultima la libreria de los estilos para que apliquen los estilos propios  -->
+</head>
+
+<body><!--Todo lo visible en la pagina-->
+    <header class="site-header inicio">
+        <div class="contenedor contenido-header">
+            <!-- class="contenedor: Centra el contenido de la pagina, contenido-header solo afecta la barra y el h1-->
+            <div class="barra"> <!--clase para la información de la parte superior-->
+                <!-- agrupar contenido introductorio o de navegación, como un logo, título principal o menú tambien se usa en secciones específicas como un <article> o <section> -->
+                <a href="/">
+                    <img src="img/logo.svg" alt="Logotipo de bienes raices">
+                </a>
+
+                <nav class="navegacion"> <!--nav: Contenedor de enlaces de navegación-->
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="anuncios.html">Anuncios</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contacto.html">Contactos</a>
+                </nav>
+
+            </div>
+            <h1>Venta de Casas y Apartamentos Exclusivos de Lujo</h1>
+        </div>
+
+    </header>
+
+    <aside>
+        <!--sirve para marcar contenido que está indirectamente relacionado con el contenido principal de una página, pero que puede separarse sin afectar la comprensión del flujo principal-->
+        <section class="contenedor seccion">
+            <!-- <section> agrupar contenido temáticamente relacionado en una sección genérica y autónoma de una página-->
+            <!--Se usa cuando la siguiente etiqueta es un encabezado H1, h2, h3, h4... y no debe estar dentro de otro <section> -->
+            <h2 class="fw-300 centrar-texto">Más Sobre Nosotros</h2>
+            <div class="iconos-nosotros">
+                <div class="icono">
+                    <img src="img/icono1.svg" alt="Icono de seguridad">
+                    <h3>Seguridad</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dolore vel illo mollitia fugiat
+                        omnis
+                        dicta
+                        accusamus, labore quae nulla. Dolorum, culpa! Porro repellendus labore natus iste, sequi aliquam
+                        atque.
+                    </p>
+                </div>
+
+                <div class="icono">
+                    <img src="img/icono2.svg" alt="Icono de Mejor Precio">
+                    <h3>El Mejor Precio</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dolore vel illo mollitia fugiat
+                        omnis
+                        dicta
+                        accusamus, labore quae nulla. Dolorum, culpa! Porro repellendus labore natus iste, sequi aliquam
+                        atque.
+                    </p>
+                </div>
+
+                <div class="icono">
+                    <img src="img/icono3.svg" alt="Icono de a Tiempo">
+                    <h3>A Tiempo</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dolore vel illo mollitia fugiat
+                        omnis
+                        dicta
+                        accusamus, labore quae nulla. Dolorum, culpa! Porro repellendus labore natus iste, sequi aliquam
+                        atque.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+    </aside>
+
+    <main class="seccion contenedor"> <!-- main: Contenido diferencial y unico de cada pagina, no se repite-->
+        <h2 class="fw-300 centrar-texto">Casas y Apartamentos en venta</h2>
+
+        <div class="contenedor-anuncios">
+            <div class="anuncio">
+                <img src="img/anuncio1.jpg" alt="Anuncio casa de lujo en el lago">
+                <div class="contenido-anuncio">
+                    <h3>Casa de Lujo en el Lago</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dolore vel illo mollitia fugiat
+                        omnis icta ccusamus, labore quae nulla. Dolorum, culpa! Porro.
+                    </p>
+                    <p class="precio">$3.000.000</p>
+
+                    <ul class="iconos-caracteristicas">
+                        <li>
+                            <img src="img/icono_wc.svg" alt="icono wc">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_estacionamiento.svg" alt="icono parqueadero">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_dormitorio.svg" alt="icono habitaciones">
+                            <p>4</p>
+                        </li>
+                    </ul>
+
+                    <a href="anuncio.html" class="boton boton-amarillo boton-ver d-block"> <i class="fa-regular fa-eye"></i>Ver
+                        Propiedad</a>
+
+                </div>
+            </div>
+
+            <div class="anuncio">
+                <img src="img/anuncio2.jpg" alt="Anuncio Casa Terminados de Lujo">
+                <div class="contenido-anuncio">
+                    <h3>Casa Terminados de Lujo</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dolore vel illo mollitia fugiat
+                        omnis dicta ccusamus, labore quae nulla. Dolorum, culpa! Porro.
+                    </p>
+                    <p class="precio">$2.000.000</p>
+
+                    <ul class="iconos-caracteristicas">
+                        <li>
+                            <img src="img/icono_wc.svg" alt="icono wc">
+                            <p>2</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_estacionamiento.svg" alt="icono parqueadero">
+                            <p>2</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_dormitorio.svg" alt="icono habitaciones">
+                            <p>3</p>
+                        </li>
+                    </ul>
+
+                    <a href="anuncio.html" class="boton boton-amarillo boton-ver d-block"> <i class="fa-regular fa-eye"></i>Ver
+                        Propiedad</a>
+                </div>
+            </div>
+
+            <div class="anuncio">
+                <img src="img/anuncio3.jpg" alt="Anuncio casa con Piscina">
+                <div class="contenido-anuncio">
+                    <h3>Casa con Piscina</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dolore vel illo mollitia fugiat
+                        omnis dicta ccusamus, labore quae nulla. Dolorum, culpa! Porro.
+                    </p>
+                    <p class="precio">$3.000.000</p>
+
+                    <ul class="iconos-caracteristicas">
+                        <li>
+                            <img src="img/icono_wc.svg" alt="icono wc">
+                            <p>2</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_estacionamiento.svg" alt="icono parqueadero">
+                            <p>2</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_dormitorio.svg" alt="icono habitaciones">
+                            <p>4</p>
+                        </li>
+                    </ul>
+
+                    <a href="anuncio.html" class="boton boton-amarillo boton-ver d-block"><i class="fa-regular fa-eye"></i>Ver
+                        Propiedad</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ver-todas">
+            <a href="anuncios.html" class="boton boton-verde boton-ver"> <i class="fa-regular fa-eye"></i>Ver Todas</a>
+        </div>
+    </main>
+
+    <section class="imagen-contacto">
+        <div class="contenedor contenido-contacto"> <!-- "contenedor: Centra el contenido de la pagina -->
+            <h2>Encuentra la casa de tus sueños</h2>
+            <p>Llena el formulario de contacto y nos contactaremos contigo muy pronto</p>
+            <a href="contacto.html" class="boton boton-verde boton-ver">Contactános</a>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <!--Ventana emergente para captar la atención total del usuario/Confirmaciones/Formularios de suscripción/Información detallada/Alertas personalizadas -->
+            <dialog id="dialog"><!--etiqueta dialog: contenedor oculto -->
+                <h1>¿Sabías que puedes traer tu propiedad y nosotros la gestionamos por ti?</h1>
+                <p>¡Te ayudamos con tu venta o Alquiler!</p>
+                <img id="sticker-html" width="100" height="100" title="sticker sold out" alt="sticker de sold out"
+                    src="/img/soldout.jpg">
+                <button id="hide">Si quiero</button>
+            </dialog>
+            <div class="contenedor boton-trabaja-nosotros seccion">
+                <button id="show" class="boton boton-verde boton-ver">¿Quieres Trabajar con Nosotros?</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="seccion-inferior contenedor seccion">
+        <section class="blog">
+            <h3 class="centrar-texto fw-300">Nuestro Blog</h3>
+
+            <!--contenido independiente y autónomo que podría distribuirse o reutilizarse por sí solo en otro sitio usar en blogs, clasificados, foros-->
+            <article class="entrada-blog">
+                <div class="imagen">
+                    <img src="img/blog1.jpg" alt="Imagen Blog Terraza en el Techo de tu Casa">
+                </div>
+                <div class="texto-entrada">
+                    <a href="entrada.html">
+                        <h4>Terraza en el Techo de tu Casa</h4>
+                    </a>
+                    <p>Escrito el: <span> 20/12/2025 </span> por: <span>Admin</span></p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        officia ullam iusto quidem, architecto pariatur?
+                        suscipit. Quod,
+                        saepe ducimus!
+                    </p>
+                </div>
+            </article>
+
+            <article class="entrada-blog">
+                <div class="imagen">
+                    <img src="img/blog2.jpg" alt="Imagen Blog Guia Para la Decoración de tu Hogar">
+                </div>
+                <div class="texto-entrada">
+                    <a href="entrada.html">
+                        <h4>Guia Para la Decoración de tu Hogar</h4>
+                    </a>
+                    <p>Escrito el: <span> 20/12/2025 </span> por: <span> Admin </span></p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        officia ullam iusto quidem, architecto pariatur? 
+                        suscipit. Quod,
+                        saepe ducimus!
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <section class="testimoniales">
+            <h3 class="centrar-texto fw-300">Testimonios</h3>
+            <div class="testimonial">
+                <blockquote>
+                    Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. iste deleniti
+                    adipisicing elit. Numquam deleniti
+                    corporis tenetur reprehenderit
+                </blockquote>
+                <p>- Pedro Coral Tavera</p>
+            </div>
+        </section>
+    </div>
+
+    <h3 class="fw-300 centrar-texto">Preguntas Frecuentes</h3>
+    <div class="seccion-faqs contenedor seccion">
+        <class="preguntas-frecuentes">
+            <details open>
+                <summary>¿Tienes disponibilidad inmediata de propiedades?</summary>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, voluptatum nobis. Magni enim
+                    obcaecati rovident ipsum esse vitae, aperiam a. Vitae totam minima incidunt laudantium, similique repellat
+                    aliquid error exercitationem.
+                </p>
+            </details>
+            <details>
+                <summary>¿Cómo obtengo una preaprobación hipotecaria?</summary>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae fugit corrupti dolores dolorum
+                    voluptate vitae sequi hic molestiae. Expedita facere aliquid unde eaque itaque. Sunt obcaecati
+                    debitis expedita nihil</p>
+            </details>
+            <details>
+                <summary>¿Cómo empiezo?</summary>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid harum fugit fugiat nesciunt? Animi,
+                    veritatis officiis dolore sunt ipsa delectus ipsam libero molestiae ex nesciunt adipisci doloremque
+                    ut voluptatibus quisquam</p>
+            </details>
+            <details>
+                <summary>¿Qué papeles necesito?</summary>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid harum fugit fugiat nesciunt? Animi,
+                    veritatis officiis dolore sunt ipsa delectus ipsam libero molestiae ex nesciunt adipisci doloremque
+                    ut voluptatibus quisquam</p>
+            </details>
+        </section>
+    </div>
+
+
+    <footer class="site-footer seccion">  <!-- <footer> Puede ser usado tambien en la parte final de un articule No solo se usa al final de una pagina-->
+        <div class="contenedor contenedor-footer">
+            <nav class="navegacion">
+                <a href="nosotros.html">Nosotros</a>
+                <a href="anuncios.html">Anuncios</a>
+                <a href="blog.html">Blog</a>
+                <a href="contacto.html">Contactos</a>
+            </nav>
+            <small>
+                <p class="copyright">Protegido por Copyright © 2026</p>
+            </small> <!--texto secundario o de menor importancia, como avisos legales, derechos de autor o letras pequeñas-->
+        </div>
+    </footer>
+
+    <!-- EL codigo Javascript se deja justo antes decerrarel body para asegurasr que todo el HTML se haya cargado antes de que el JavaScript intente buscar los IDs-->
+    <!--Al dar clic sobre el elemento que tenga el id "show" se habre la pantalla emergente-->
+    <script>
+        window.show.addEventListener('click', () => {
+            window.dialog.showModal()
+        })
+        window.hide.addEventListener('click', () => {
+            window.dialog.close()
+            window.location.href = "contacto.html"
+        })
+    </script>
+    <!--Al dar clic sobre el elemento que tenga el id "hide" se cierra la pantalla emergente y me lleva a la pagina de contactos-->
+
+</body>
+
+
+
+</html>
