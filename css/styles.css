@@ -48,6 +48,7 @@ img {
 }
 
 .contenedor {
+    width: 95%;
     width: clamp(300px, 95vw, 120rem);          /* clamp(mínimo, actual_variable, máximo) */
     margin-inline: auto;                        /* el texto fluye de izquierda a derecha, auto: centrar un elemento horizontalmente dentro de su contenedor */
     padding-inline: 1rem;                       /* El padding si el usuario usa una pantalla extremadamente pequeña */
@@ -110,6 +111,15 @@ summary {
     text-align: center;                  /* Centra el nombre del botón */
     text-transform: uppercase;
     border: none;                        /* Quita el borde a los botones */
+    display: block;
+    flex: 0 0 100%;                      /* Hace que el botón ver todas tome todo el ancho de la pantalla en celular */
+}
+
+@media(min-width: 768px) {              /* si la pantalla mide 768 píxeles de ancho o más aplica lo siguiente */
+    .boton{
+        display: inline-block;          /* Hace que el botón no ocupe todo el ancho de la pantalla */
+        flex: 0 0 auto;                  /* el botón no crece para lelnar espacio extra, no se encoge si falta espacio El tamaño inicial dependerá de su contenido    */            
+}
 }
 
 .boton:hover {
@@ -161,7 +171,6 @@ summary {
 @media (max-width: 480px) {
     contacto-btn {
         width: 100%;                                /* Ajuste en celulares, los botones ocupan todo el ancho */
-
     }
 }
 
@@ -185,86 +194,146 @@ summary {
 }
 
 .contenido-header {
-    height: 100%;
-    /* Toma todo el espacio disponible de la clase padre en el header principal .site-header.inicio */
-    display: flex;
-    /* Habilita flexbox el cual permite organizar, alinear y distribuir el espacio entre elementos dentro de un contenedor pero solo para el primer nivel de hijos en el .htnl*/
-    flex-direction: column;
-    /* Posiciona el contenido de la barra y h1 de abajo hacia arriba */
-    justify-content: space-between;
-    /* Posiciona le barra y el h1 con un espacio entre ellos*/
+    height: 100%;                           /* Toma todo el espacio disponible de la clase padre en el header principal .site-header.inicio */
+    display: flex;                          /* Habilita flexbox el cual permite organizar, alinear y distribuir el espacio entre elementos dentro de un contenedor pero solo para el primer nivel de hijos en el .htnl*/
+    flex-direction: column;                 /* Posiciona el contenido de la barra y h1 de abajo hacia arriba */
+    justify-content: space-between;         /* Posiciona le barra y el h1 con un espacio entre ellos*/
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .contenido-header {
+        text-align: left;                   /* Posiciona ala izquierda el contenido si la pantalla mide mas de 768 px */
+    }
 }
 
 .contenido-header h1 {
     color: #ffffff;
-    padding-bottom: 2 rem;
-    /* Espacio hacia adentro entre dos lineas */
-    max-width: 60rem;
-    /* Cuando llega 600 px corta el elemento y hace un salto de linea */
-    line-height: 2;
-    /* Interlineado espacio entre las dos lineas del h1  */
+    font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+    .contenido-header h1 {
+    padding-bottom: 2 rem;                  /* Espacio hacia adentro entre dos lineas */
+    max-width: 50rem;                       /* Cuando llega 600 px corta el elemento y hace un salto de linea */
+    line-height: 2;                         /* Interlineado espacio entre las dos lineas del h1  */
+    }
 }
 
 .barra {
-    display: flex;          /* Habilita flexbox el cual permite organizar, alinear y distribuir el espacio entre elementos dentro de un contenedor*/
+    padding-top: 3rem;                      /* Espacio hacia adentro de la parte alta de la pagina y el logo */
+}
+
+@media (min-width: 768px) {
+    .barra {
+    display: flex;                          /* Habilita flexbox el cual permite organizar, alinear y distribuir el espacio entre elementos dentro de un contenedor*/
     justify-content: space-between;         /* Alinea un elemento a la derecha y otro a la izquierda, existen otras propiedades como flex-start, flex-end, center, space-around/evenly*/
-    align-items: center;
-    /* Alinea verticalmente el contenedor de navegación en la mitad del logo*/
-    padding-top: 3rem;
-    /* Espacio hacia adentro de la parte alta de la pagina y el logo */
+    align-items: center;                    /* Alinea verticalmente el contenedor de navegación en la mitad del logo*/
+    }
+}
+
+.barra img {                    
+    display: block;                         /* Las imágenes por defecto fluyen como texto; al hacerlas bloque, toman su propio espacio. bloquea el display para que el logo se pueda centrar */
+    margin: 0 auto;
 }
 
 /** NAVEGACION **/
 .navegacion a {                     /* a hace referencia a la eqtiqueta <a> que esta dentro de la etiqueta <nav> en el documento html */
     color: #ffffff;               /* Se puede usar formato rgba y hsla  para darle un toque de transparencia a los colores */
     text-decoration: none;          /* borrar linea debajo de los enlaces de navegación */
-    font-size: 1.8rem;              /* = 18 px*/ 
-    margin-right: 2rem;             /* espacios entre los enlaces de navegación  */    
+    font-size: 1.8rem;                   
+    display: block;                 /* salto de linea para los enlaces */  
+}
+
+@media (min-width:768px) {
+    .navegacion a {
+        display: inline-block;      /* la navegacion Vuelve a la posicion horizontal cuando la pantalla mide mas de 968 pixeles */
+        font-size: 2.5rem;          /* tamaño de la navegación */
+        margin-right: 2rem;         /* espacios entre los enlaces de navegación  */
+    }
+    .navegacion a:last-of-type {
+        margin: 0;                  /* Al ultimo elemento de la navegacion le quita el margen a la derecha */
+    }
 }
 
 .navegacion a:hover {
     color: #00aeffaf;
 }
 
-.navegacion a:last-of-type {
-    /* Al ultimo que tengo le quita el margen a la derecha */
-    margin: 0;
+/* MOBILE MENU */
+.mobile-menu img {
+    width: 5rem;                    /* tamaño del menu hamburguesa */
+}
+
+@media (min-width: 768px) {
+    .mobile-menu {
+    display: none;
+}
+}
+
+.navegacion:target {
+    display: block;
+}
+
+.navegacion {
+    display: none;                 /* esconde la navegación */
+}
+
+@media (min-width: 768px) {
+    .navegacion {
+        display: block;
+    }
 }
 
 /* ICONOS NOSOTROS */
-.iconos-nosotros {
+@media (min-width: 768px) {
+    .iconos-nosotros {
     display: flex;                          /* Ubica los tres h3 de la clase .iconos-nosotros en el centro */
     justify-content: space-between;         /* Agrega un espacio igual entre cada elemento del contenedor */
-    flex-wrap: wrap;                        /* Permite que los iconos bajen si no hay espacio y no se rompa en dispositivos móviles. */
+    /* flex-wrap: wrap;                         Permite que los iconos bajen si no hay espacio y no se rompa en dispositivos móviles. 
     gap: 2rem;                              /* Crea espacio entre los elementos de forma moderna */
+}
 }
 
 .icono {
-    flex: 1 1 300px;                    /* Cada elemento medira lo mismo 33.3% de toda la pantalla, en móviles sera el 100% y en PC el 33% */
+    /* flex: 1 1 300px;                     Cada elemento medira lo mismo 33.3% de toda la pantalla, en móviles sera el 100% y en PC el 33% */
     text-align: center;                 /* Alinea el texto al centro*/
 }
 
-.icono img {
-    display: block;                     /* Las imágenes por defecto fluyen como texto; al hacerlas bloque, toman su propio espacio. */
-    margin: 0 auto 1.5rem auto;         /* Calcula el espacio sobrante a la izquierda y derecha y lo reparte igual para quedar centrado */
+@media (min-width: 768px) {
+    .icono {
+        flex-basis: calc(33.3% - 1rem);
+    }
 }
+
+.icono img {                             /* Centra las imagenes de la sección Más Sobre Nosotros*/  
+    display: block;                      /* Las imágenes por defecto fluyen como texto; al hacerlas bloque, toman su propio espacio. */
+    margin: 0 auto 1.5rem auto;          /* Calcula el espacio sobrante a la izquierda y derecha y lo reparte igual para quedar centrado */
+} 
 
 .icono h3 {
     text-transform: uppercase;          /* Cambia la letra a mayusulas o minusculas ejp Capitalize, lowercase*/
 }
 
 /* ANUNCIOS */
-.contenedor-anuncios {
+@media (min-width: 768px) {
+    .contenedor-anuncios {
     display: flex;                      /* Ubica la sección de Casas y Apartamentos en venta en el centro */
     justify-content: space-between;     /* Agrega un espacio igual entre cada elemento del contenedor */    
     flex-wrap: wrap;                    /* Hace que el contenido se pocicione debajo del otro */
 }
+}
 
 .anuncio {
-    flex: 0 0 calc(33.3% - 1rem);           /* flex-grow=0 el contenido crece lo mas posible, flex-shrink=0 el contenido se hace pequeño si es posible, Cada elemento medira lo mismo 33.3% de toda la pantalla, en móviles sera el 100% y en PC el 33% */
     border: 1px solid #B5B5B5;            /* Borde para cada anuncio width, style, color */
     background-color: #F5F5F5;
     margin-bottom: 2rem;                    /* Espacio vertidal entre los contenido de los anuncios */
+}
+
+@media (min-width: 768px) {
+    .anuncio {
+        flex: 0 0 calc(33.3% - 1rem);           /* flex-grow=0 el contenido crece lo mas posible, flex-shrink=0 el contenido se hace pequeño si es posible, Cada elemento medira lo mismo 33.3% de toda la pantalla, en móviles sera el 100% y en PC el 33% */
+    }
 }
 
 .contenido-anuncio {
@@ -334,6 +403,7 @@ summary {
 }
 
 .contenido-contacto {
+    flex: 0 0 95%;                                      /* Agrega un margen a la sección */    
     color: #ffffff;
 }
 
@@ -342,7 +412,8 @@ summary {
 }
 
 /* SECCION INFERIOR */
-.seccion-inferior {
+@media (min-width: 768px) {
+    .seccion-inferior {
     display: flex;
     justify-content: space-between;   
 }
@@ -354,23 +425,30 @@ summary {
 .seccion-inferior .testimoniales {
     flex-basis: calc(40% - 2rem);           /* Se asigna el 40 % de la pantalla al testimonio  */
 }
+}
 
 .entrada-blog {
+    margin-bottom: 3rem;                /* Espacio entre los dos articulos  */
+}
+
+@media (min-width: 768px) {
+    .entrada-blog {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 3rem;                /* Espacio entre los dos articulos  */
+}
 }
 
 .entrada-blog:last-of-type {
     margin-bottom: 0;                   /* Quita espacio naranja al inspecionar para el articulo 2 */
 }
 
-.entrada-blog .imagen {
+@media (min-width: 768px) {
+    .entrada-blog .imagen {
     flex-basis: 40%;                    /* Tamaño imagen del articulo  */
 }
-
-.entrada-blog .texto-entrada {
+    .entrada-blog .texto-entrada {
     flex-basis: calc(60% - 3rem);       /* Tamaño del  <h4> y el <p>  */
+}
 }
 
 .texto-entrada a {
@@ -430,7 +508,6 @@ summary {
     justify-content: space-between;
 }
 
-
 /* FOOTER */
 .site-footer {
     background-color: #333333;
@@ -439,8 +516,24 @@ summary {
 
 .contenedor-footer{
     padding: 2rem 0;                                /* Agrega 2 pixeles de espacio en el footer */
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .contenedor-footer{
     display: flex;
     justify-content: space-between;                 /* separa la navegación a la izquierda y el copyright a la derecha*/
+}
+}
+
+.site-footer nav {
+    display: none;                                 /* oculta la navegacion en el footer */
+}     
+
+@media (min-width: 768px) {
+    .site-footer nav {
+    display: block;                                 /* bloquea ocultar la navegacion en el footer */
+}     
 }
 
 .copyright {
@@ -449,10 +542,13 @@ summary {
 }
 
 /* PAGINA INTERNA */
-.contenido-nosotros {
+
+@media (min-width: 768px) {
+    .contenido-nosotros {
     display: grid;                                  /* permite crear estructuras de dos dimensiones filas y columnas */
     grid-template-columns: repeat(2, 1fr);          /* Divide la pantalla en dos fraciones iguales para la iamgen y los parrafos */
     grid-column-gap: 2rem;                          /* Espacion entre la imagen y los parrafos*/
+}
 }
 
 .contenido-nosotros blockquote {
